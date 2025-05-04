@@ -1,0 +1,41 @@
+.employee-form-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 16px;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.file-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.preview-container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.preview-image {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+}

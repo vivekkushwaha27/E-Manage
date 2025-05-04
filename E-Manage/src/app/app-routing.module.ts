@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path:'',
     loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
+  },
+  {
+    path:'**',
+    loadChildren:() => import('./shared/components/components.module').then(m => m.ComponentsModule)
   }
 ];
 

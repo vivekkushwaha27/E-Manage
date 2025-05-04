@@ -1,1 +1,50 @@
-<p>add-employee works!</p>
+<div class="employee-form-container">
+  <h2 class="form-title">Add Employee</h2>
+
+  <form (ngSubmit)="addEmployee(employeeForm)" #employeeForm="ngForm" class="employee-form">
+
+    <!-- Name Field -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput name="name" [(ngModel)]="name" required #nameCtrl="ngModel" />
+      <mat-error *ngIf="nameCtrl.invalid && nameCtrl.touched">Name is required</mat-error>
+    </mat-form-field>
+
+    <!-- Email Field -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" name="email" [(ngModel)]="email" required #emailCtrl="ngModel" />
+      <mat-error *ngIf="emailCtrl.invalid && emailCtrl.touched">
+        <ng-container *ngIf="emailCtrl.errors?.['required']">Email is required</ng-container>
+        <ng-container *ngIf="emailCtrl.errors?.['email']">Invalid email format</ng-container>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- DOB Field -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker" name="dob" [(ngModel)]="dob" required #dobCtrl="ngModel" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="dobCtrl.invalid && dobCtrl.touched">Date of Birth is required</mat-error>
+    </mat-form-field>
+
+    <!-- Profile Photo Field -->
+    <div class="file-upload full-width">
+      <label class="file-label">Profile Photo</label>
+      <input type="file" accept="image/*" (change)="onFileChange($event)" />
+    </div>
+
+    <!-- Preview -->
+    <div *ngIf="imagePreview" class="preview-container">
+      <p class="preview-label">Preview:</p>
+      <img [src]="imagePreview" alt="Profile Preview" class="preview-image" />
+    </div>
+
+    <!-- Submit -->
+    <button mat-raised-button color="primary" [disabled]="employeeForm.invalid" class="submit-btn">
+      Add Employee
+    </button>
+
+  </form>
+</div>

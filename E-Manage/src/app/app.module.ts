@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material/material.module';
 import { EmployeeModule } from './employee/employee.module';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ComponentsModule } from './shared/components/components.module';
 
 @NgModule({
   declarations: [
@@ -14,10 +15,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    EmployeeModule,
     RouterLink,
     RouterLinkActive,
     MaterialModule,
+    EmployeeModule,
+    ComponentsModule,
+    
   ],
   providers: [
     provideClientHydration(withEventReplay())
