@@ -1,1 +1,14 @@
-<h1>E-Manage</h1>
+<mat-toolbar>
+  <span>E-Manage</span>
+  <span class="example-spacer"></span>
+
+  <button mat-raised-button routerLink="/add" routerLinkActive="active">
+    <mat-icon>person_add</mat-icon>Employee
+  </button>
+  <pre> </pre>
+  <button mat-raised-button routerLink="/show" routerLinkActive="active">
+    <mat-icon>group</mat-icon>Employees
+  </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
